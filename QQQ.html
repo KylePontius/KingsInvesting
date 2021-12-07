@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<head>
+    <title>King's Investing | QQQ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="FBLA.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="searchBar.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almendra&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almendra&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+<body class="spacing">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="memberHome.html" id="logo">King's Investing</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navigation Section-->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <input id="dataMain" list="data" onChange="getPage()" placeholder="Enter Ticker or Name">
+<datalist id="data">
+    <option value="MARA">Marathon Digital Holdings</option> 
+    <option value="DAC">Danaos Corporation</option>
+    <option value="SMH">VanEck Vectors Semiconductor ETF</option>
+    <option value="SE">Sea Limited</option>
+    <option value="ZIM">ZIM Integrated Shipping Services</option>
+    <option value="QQQ">QQQ Invesco ETF</option>
+</datalist>
+          </li>
+          <li class="nav-item">
+            <a href="memberHome.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="memberHome.html#active">Active Calls</a>
+          </li>
+          <li class="nav-item">
+            <form action="index.html">
+              <button class="btn" id="logOut">Log Out</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <div class="container">
+        <header><h2>QQQ | Invesco QQQ ETF</h2></header>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Ticker Chart -->
+            <div id="chart" style="width: 100%; height: 70vh">
+            <canvas id="QQQChart" alt="One Year Daily chart of QQQ"></canvas></div>
+            <script>
+                              const ctx = document.getElementById('QQQChart').getContext('2d');
+const SmhChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [
+        0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82,
+83,
+84,
+85,
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97,
+98,
+99,
+100,
+101,
+102,
+103,
+104,
+105,
+106,
+107,
+108,
+109,
+110,
+111,
+112,
+113,
+114,
+115,
+116,
+117,
+118,
+119,
+120,
+121,
+122,
+123,
+124,
+125,
+126,
+127,
+128,
+129,
+130,
+131,
+132,
+133,
+134,
+135,
+136,
+137,
+138,
+139,
+140,
+141,
+142,
+143,
+144,
+145,
+146,
+147,
+148,
+149,
+150,
+151,
+152,
+153,
+154,
+155,
+156,
+157,
+158,
+159,
+160,
+161,
+162,
+163,
+164,
+165,
+166,
+167,
+168,
+169,
+170,
+171,
+172,
+173,
+174,
+175,
+176,
+177,
+178,
+179,
+180,
+181,
+182,
+183,
+184,
+185,
+186,
+187,
+188,
+189,
+190,
+191,
+192,
+193,
+194,
+195,
+196,
+197,
+198,
+199,
+200,
+201,
+202,
+203,
+204,
+205,
+206,
+207,
+208,
+209,
+210,
+211,
+212,
+213,
+214,
+215,
+216,
+217,
+218,
+219,
+220,
+221,
+222,
+223,
+224,
+225,
+226,
+227,
+228,
+229,
+230,
+231,
+232,
+233,
+234,
+235,
+236,
+237,
+238,
+239,
+240,
+241,
+242,
+243,
+244,
+245,
+246,
+247,
+248,
+249,
+250,
+251,
+252,
+253
+        ],
+        datasets: [{
+            label: '1 Year Daily Chart',
+            data: [
+            305.52,
+307.25,
+308.29,
+301.31,
+302.52,
+301.85,
+304.04,
+307.29,
+308.98,
+311,
+310.06,
+308.92,
+309.76,
+308.2,
+309.56,
+312.68,
+312.96,
+312.97,
+313.74,
+309.31,
+311.86,
+307.54,
+314.98,
+319.03,
+314.42,
+313.92,
+316.04,
+314.35,
+311.86,
+316.41,
+323.77,
+326.36,
+325.42,
+328.11,
+328.59,
+319.43,
+321.32,
+314.56,
+322.42,
+327.68,
+326.38,
+330.24,
+331.36,
+333.58,
+333.51,
+332.75,
+334.58,
+336.45,
+335.54,
+333.93,
+332.47,
+331.02,
+322.44,
+321.48,
+324.13,
+312.83,
+314.14,
+323.59,
+318.4,
+309.16,
+304.1,
+308.68,
+299.94,
+311.77,
+310.88,
+318.04,
+315.46,
+318.83,
+320.58,
+321.9,
+312.04,
+313.14,
+318.61,
+317.22,
+311.87,
+311.33,
+316,
+315.91,
+314.32,
+319.13,
+324.57,
+331.05,
+330.82,
+331.62,
+335.08,
+337.11,
+336.67,
+340.6,
+336.51,
+341.61,
+342.01,
+338.88,
+336.41,
+339.29,
+335.2,
+339.42,
+341.63,
+340.15,
+339,
+340.22,
+337.99,
+336.19,
+330.14,
+329.03,
+331.51,
+334.2,
+325.76,
+325.31,
+316.89,
+319.34,
+326.39,
+324.41,
+322.22,
+322.59,
+328.83,
+327.01,
+332.51,
+332.97,
+334.13,
+332.88,
+333.93,
+332.82,
+333.47,
+330,
+335.6,
+336.6,
+336.76,
+336.84,
+340.35,
+341.24,
+344.51,
+342.26,
+341.01,
+345.34,
+342.63,
+344.36,
+347.57,
+347.74,
+349.89,
+349.46,
+353.71,
+354.99,
+354.43,
+354.57,
+358.64,
+360.19,
+360.95,
+358.77,
+361.01,
+362.42,
+362.42,
+363.07,
+360.52,
+357.6,
+354.67,
+358.79,
+361.56,
+363.95,
+368.2,
+368.49,
+364.43,
+365.83,
+366.48,
+364.57,
+364.6,
+366.81,
+367.34,
+369.67,
+368.05,
+368.73,
+366.84,
+366.21,
+367.53,
+368.82,
+368.98,
+365.73,
+362.21,
+363.96,
+367.73,
+373.23,
+374.37,
+374.8,
+372.42,
+376.04,
+380.26,
+379.95,
+380.58,
+380.4,
+381.57,
+382.11,
+380.78,
+379.47,
+376.59,
+376.33,
+375.26,
+378.05,
+378.31,
+373.83,
+365.7,
+366.15,
+369.57,
+372.98,
+373.33,
+370.35,
+359.87,
+359.28,
+357.96,
+360.18,
+352.62,
+357.38,
+359.67,
+362.97,
+361.16,
+358.39,
+357.14,
+360,
+366.63,
+368.94,
+372.65,
+375.47,
+374.98,
+377.27,
+374.1,
+377.93,
+379.12,
+380,
+384.22,
+386.11,
+387.43,
+389.05,
+393.18,
+398.22,
+398.6,
+398.06,
+395.32,
+389.51,
+390.59,
+394.7,
+394.61,
+397.42,
+397.63,
+401.75,
+403.99,
+399.3,
+397.48,
+398.76,
+391.2,
+399.69,
+393.82,
+387.12,
+389.91,
+383.13
+            ],
+            backgroundColor: [
+                'rgba(251, 175, 0, 1)',
+            ],
+            borderColor: [
+                'rgba(251, 175, 0, 1)',
+            ],
+            borderWidth: 1,
+            pointRadius: 0,
+            fill: true,
+        }]
+    },
+    options: {
+      responsiveness: true,
+      maintainAspectRatio: false,
+      scales: {
+            y: {
+                title: { text: 'Value in USD',
+                display: true,
+            }
+            },
+            x:{
+              title:{
+                text: 'Number of Trading Days in Last Year',
+                display:true
+              }
+            }
+
+        },
+        plugins:{
+            legend: {
+            labels:{
+                boxWidth: 0
+            }
+        },
+        }
+
+    }
+});
+            </script>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 spacing">
+            <div class="row">
+                <div class="col col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="text-center"><header><h4>Ratings:</h4></header></div>
+                    <ul class="text-center securityUL">
+                        <li class="securityLiSpacing">Dividend Rating: 6/10</li>
+                        <li class="securityLiSpacing">Growth Rating: 8/10</li>
+                        <li class="securityLiSpacing">Technical Rating: 9/10</li>
+                        <li class="securityLiSpacing">Stability Rating: 9/10</li>
+                        <li class="securityLiSpacing">Quantitative Rating: 9/10</li>
+                        <li class="securityLiSpacing">Risk Rating: 2/10</li>
+                        <li class="securityLiSpacing">Analyst Rating: 9/10</li>
+                    </ul>
+                </div>
+                <div class="col col-xxl-4 col-xl-4 col-md-4 col-sm-6 col-xs-6 text-center">
+                  <header><h4>Price at Time of Writing (USD):</h4></header>
+                  <h5 class="spacing">398.76</h5>
+                </div>
+                <div class="col col-xxl-4 col-xl-4 col-md-4 col-sm-6 col-xs-6 text-center">
+                   <header><h4>Trend:</h4></header>
+                   <h5 class="spacing">Bullish</h5>
+                </div>
+                <hr>
+            </div>   
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Overview of security -->
+            <header><h4>Overview</h4></header>
+            QQQ is one of the most popular exchange traded funds in the world, the Invesco ETF is meant to track the progress of the top 100 Nasdaq 
+            companies, including: Microsoft, Apple, Tesla, Alphabet, amongst other prestigous companies. 
+            <hr>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Fundamental Analysis -->
+            <header><h4>Fundamental Analysis</h4></header>
+            <p>The holdings of QQQ are nothing short of being exemplary companies in the market, each of its holdings have incredible potential for growth in the 
+            coming years. Furthermore, the ETF is actively managed by the reputable investment management firm Invesco, which will make adjustments to the 
+            holdings if needed. </p>
+            <hr>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+          <header><h4>Simple Technical Analysis</h4></header>
+            <!-- Simple Technical Analysis -->
+            <div>
+                <img class="tickerChart" src="QQQSTA.png" alt="QQQ chart with trend lines">
+            </div>
+            <p>QQQ is far from its support and resistance lines, indicating a possible move up towards upper resistance after a further approach towards it's support. 
+            The RSI is quite volatile, however new highs are consistenly set.</p>
+            <hr>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+          <header><h4>Advanced Technical Analysis</h4></header>
+            <!-- Advanced Technical Analysis -->
+            <div>
+                <img class="tickerChart" src="QQQTA.png" alt="QQQ chart with fibonacci extensions">
+            </div>
+            <p>It is apparent one the one year daily chart, that QQQ has not completed a proper five waves, in fact, it can be argued that the current position is a 
+            4 of 3 of 5, indicating that QQQ can be subject to a much higher bull run due to the nature of the MACD and marginal run up of wave 3 of 3 of 5.
+          </p>
+            <hr>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Thesis and Rating on 1 to 10-->
+            <header><h4>Thesis</h4></header>
+            <p>QQQ is given a rating of 9, or accumulate, as the holdings within the fund are both fundametnally and technically well, paving the way for a 
+            higher run up after the wave 4 of 3 completes, however, once an impulsive five wave structure once a wave 4 of 3 completes, wave 3 of 5 will be over, 
+            and wave 4 of 5 will begin, signaling a much more grand pullback for early 2022.  </p>
+        </div>
+    </div>
+</body>
+<footer class="spacing">
+  <section>
+    <div class="container-fluid uFooter text-white">
+      <div class="row">
+        <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 text-center">
+          <h2>King's Investing</h2>
+          <p>From rags to riches.</p>
+        </div>
+        <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 text-end">
+          <header class="footerLinkList"><h3>Popular Links</h3></header>
+          <ul>
+            <li><a href="memberHome.html">Home</a></li>
+            <li><a href="memberHome.html#active">Active Calls</a></li>
+            <li><a href="memberResearch.html#Analysts">Analysts</a></li>
+            <li><a href="memberResearch.html">Research</a></li>
+            <li><a href="memberFAQs.html">FAQs</a></li>
+            <li><a href="memberContact.html">Contact Us</a></li>
+            <li><a href="memberCopyright.html">Copyright</a></li>
+          </ul>
+        </div>
+        <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 text-center">
+          <header><h3>Social Media</h3></header>
+          <ul class="footerSocialMediaList">
+            <li><button class="btn btn-primary"><a href="https://www.instagram.com/kylepontius05/" class="text-white" target="_blank">Instagram  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+            </svg></a></button></li>
+            <li><button class="btn btn-primary"><a href="https://www.facebook.com/Kings-Investing-111840321337637" class="text-white" target="_blank">Facebook  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+            </svg></a></button></li>
+            <li><button class="btn btn-primary"><a href="https://www.linkedin.com/in/kyle-pontius-1aa439227/" class="text-white" target="_blank">LinkedIn  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+            </svg></a></button></li>
+            </ul>
+        </div>
+      </div>
+      <div id="copyright" class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 text-center">
+        © 2021 King's Investing
+      </div>
+    </div>
+  </section>
+  </footer>
+</html>

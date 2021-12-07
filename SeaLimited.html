@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<head>
+    <title>Ticker Name</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="FBLA.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <script src="searchBar.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almendra&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almendra&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+<body class="spacing">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="nav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#intro" id="logo">King's Investing</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navigation Section-->
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <input id="dataMain" list="data" onChange="getPage()" placeholder="Enter Ticker or Name">
+    <datalist id="data">
+        <option value="MARA">Marathon Digital Holdings</option> 
+        <option value="DAC">Danaos Corporation</option>
+        <option value="SMH">VanEck Vectors Semiconductor ETF</option>
+        <option value="SE">Sea Limited</option>
+        <option value="ZIM">ZIM Integrated Shipping Services</option>
+        <option value="QQQ">QQQ Invesco ETF</option>
+    </datalist>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="memberHome.html#intro">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="memberHome#active">Active Calls</a>
+              </li>
+              <li class="nav-item">
+                <form action="index.html">
+                  <button class="btn" id="logOut">Log Out</button>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <header><h2><!-- Ticker and Name --></h2></header>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Ticker Chart -->
+            <div id="chart" style="width: 100%; height: 70vh">
+            <canvas id="seaLimitedChart" alt="Chart of SE for every trading day in last year."></canvas></div>
+            <script>
+const ctx = document.getElementById('seaLimitedChart').getContext('2d');
+const seaLimitedChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [
+        0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82,
+83,
+84,
+85,
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97,
+98,
+99,
+100,
+101,
+102,
+103,
+104,
+105,
+106,
+107,
+108,
+109,
+110,
+111,
+112,
+113,
+114,
+115,
+116,
+117,
+118,
+119,
+120,
+121,
+122,
+123,
+124,
+125,
+126,
+127,
+128,
+129,
+130,
+131,
+132,
+133,
+134,
+135,
+136,
+137,
+138,
+139,
+140,
+141,
+142,
+143,
+144,
+145,
+146,
+147,
+148,
+149,
+150,
+151,
+152,
+153,
+154,
+155,
+156,
+157,
+158,
+159,
+160,
+161,
+162,
+163,
+164,
+165,
+166,
+167,
+168,
+169,
+170,
+171,
+172,
+173,
+174,
+175,
+176,
+177,
+178,
+179,
+180,
+181,
+182,
+183,
+184,
+185,
+186,
+187,
+188,
+189,
+190,
+191,
+192,
+193,
+194,
+195,
+196,
+197,
+198,
+199,
+200,
+201,
+202,
+203,
+204,
+205,
+206,
+207,
+208,
+209,
+210,
+211,
+212,
+213,
+214,
+215,
+216,
+217,
+218,
+219,
+220,
+221,
+222,
+223,
+224,
+225,
+226,
+227,
+228,
+229,
+230,
+231,
+232,
+233,
+234,
+235,
+236,
+237,
+238,
+239,
+240,
+241,
+242,
+243,
+244,
+245,
+246,
+247,
+248,
+249,
+250,
+251,
+252,
+        ],
+        datasets: [{
+            label: 'Sea Limited 1 Year Chart',
+            data: [
+            176.92,
+177.7,
+182.55,
+180.37,
+177.38,
+183.88,
+183.53,
+198.78,
+198.57,
+205.87,
+202.68,
+198.95,
+193.38,
+190.26,
+188.09,
+192.99,
+198.05,
+200.35,
+196.9,
+200.65,
+195.07,
+193.18,
+180.28,
+188.35,
+196.75,
+199.05,
+196.06,
+202.93,
+194.37,
+203.94,
+210.16,
+209.06,
+218.48,
+226.78,
+229.66,
+226.05,
+231.64,
+233.15,
+233.96,
+236.49,
+228.68,
+217.22,
+205.78,
+219.78,
+216.71,
+233.53,
+238.54,
+243.54,
+243.96,
+256.76,
+263.46,
+274.66,
+270.97,
+274.63,
+276.12,
+278.14,
+268.22,
+267.5,
+280,
+252.96,
+251.81,
+248.04,
+235.35,
+235.69,
+248.51,
+250,
+251.28,
+229.68,
+229.76,
+206.05,
+228.47,
+217.21,
+236.79,
+234.99,
+231.34,
+233.46,
+224.35,
+211.26,
+214.9,
+217.84,
+216.64,
+197.5,
+202.61,
+209.24,
+204.25,
+214.35,
+223.23,
+236.45,
+234.9,
+247.03,
+245.22,
+253.11,
+250.93,
+245.34,
+244.2,
+245.56,
+250.1,
+252.42,
+250,
+236.44,
+241.09,
+246.49,
+258.59,
+272.01,
+267.14,
+265.67,
+256.83,
+252.54,
+254.62,
+243.48,
+244.9,
+238.25,
+240.28,
+222.55,
+228.77,
+213.42,
+202.34,
+216.69,
+218.84,
+228,
+226.66,
+246.15,
+246.33,
+254,
+249.54,
+246.23,
+260.62,
+253.24,
+257.54,
+258.35,
+249.6,
+256.82,
+257.32,
+264.1,
+263.08,
+271.12,
+277.69,
+277.07,
+271.19,
+274.78,
+283.24,
+282.49,
+281.06,
+280.87,
+280.88,
+289.42,
+283.35,
+281.12,
+287.19,
+274.6,
+272.31,
+273.7,
+275.68,
+267.86,
+267,
+275.7,
+275.86,
+280.94,
+275.58,
+268.83,
+267.6,
+272.84,
+279.64,
+293.92,
+293.79,
+297.67,
+289.72,
+270.92,
+275.54,
+285.01,
+276.16,
+281.29,
+282.97,
+293.51,
+304,
+302.72,
+307.14,
+296.95,
+297,
+306.24,
+306.71,
+290.49,
+308.27,
+318.61,
+321.12,
+309.33,
+315.23,
+312,
+320.09,
+321.77,
+321.03,
+331.82,
+338.32,
+340.08,
+339,
+353.36,
+351.02,
+343.8,
+322.6,
+325.5,
+323.06,
+333.55,
+337.62,
+342.91,
+339.81,
+329.62,
+329.39,
+337.31,
+342.72,
+340.41,
+336.26,
+316.72,
+311.78,
+318.73,
+319.56,
+317.9,
+320.94,
+315.34,
+324.25,
+323.28,
+316.07,
+324.9,
+349.35,
+345.37,
+354.5,
+357.09,
+366.99,
+360.6,
+363.3,
+355.3,
+348.32,
+343.57,
+340.17,
+352.73,
+343.57,
+354.04,
+360.23,
+353.66,
+356.95,
+357.78,
+344.09,
+340.91,
+335.3,
+333.3,
+341.29,
+343.02,
+329.91,
+314.41,
+310.74,
+309.99,
+299.13,
+287.52,
+289.45
+            ],
+            backgroundColor: [
+            'rgba(251, 175, 0, 1)',
+            ],
+            borderColor: [
+            'rgba(251, 175, 0, 1)',
+            ],
+            borderWidth: 1,
+            pointRadius: 0,
+            fill: true,
+        }]
+    },
+    options: {
+      maintainAspectRatio: false,
+      responsiveness: true,
+      scales: {
+            y: {
+                title: { text: 'Value in USD',
+                display: true,
+            }
+            },
+            x:{
+              title:{
+                text: 'Number of Trading Days in Last Year',
+                display:true
+              }
+            }
+
+        },
+        plugins:{
+            legend: {
+            labels:{
+                boxWidth: 0
+            }
+        },
+        }
+
+    }
+});
+            </script>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 spacing">
+            <div class="row">
+                <div class="col col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="text-center securityUL"><header><h4>Ratings:</h4></header></div>
+                    <ul class="text-center securityUL">
+                        <li class="securityLiSpacing">Dividend Rating: N/A</li>
+                        <li class="securityLiSpacing">Growth Rating: 8/10</li>
+                        <li class="securityLiSpacing">Technical Rating: 3/10</li>
+                        <li class="securityLiSpacing">Stability Rating: 2/10</li>
+                        <li class="securityLiSpacing">Quantitative Rating: 6/10</li>
+                        <li class="securityLiSpacing">Risk Rating: 8/10</li>
+                        <li class="securityLiSpacing">Analyst Rating: 6/10</li>
+                    </ul>
+                </div>
+                <div class="col col-xxl-4 col-xl-4 col-md-4 col-sm-6 col-xs-6 text-center">
+                  <header><h4>Price at Time of Writing (USD):</h4></header>
+                  <h5 class="spacing">289.45</h5>
+                </div>
+                <div class="col col-xxl-4 col-xl-4 col-md-4 col-sm-6 col-xs-6 text-center">
+                   <header><h4>Trend:</h4></header>
+                   <h5 class="spacing">Bearish</h5>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Overview of security -->
+            <header>
+              <h4>Overview</h4>
+            </header>
+            <p>Sea Limited is an incredibly diverse company that is a prominent player in three main sectors, e-commerce (Shopee),
+              digital entertainment (Garena), and digital financial services (Sea Money). The company is based in Singapore and was created in 2009 with
+              Garena was it's only product at the time until Shopee in 2015, and Sea Money in 2014.</p>
+            
+            <hr>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Fundamental Analysis -->
+            <header><h4>Fundamental Analysis</h4></header>
+            <p> Despite missing on earnings expectations in recent years, it simply does not matter at this point in the company. Sea Limited is
+              only getting started with its business expenditures, expanding and reinvesting every chance they can get to achieve a higher market share
+              and user base in its product areas. However, their revenue has been and is expected to keep on rising at exponential rates as a result of
+              their continuous instances of expansion and investment, which is in turn causing them to fall short on EPS in the short term.</p>
+           
+            <hr>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Simple Technical Analysis -->
+            <header><h4>Simple Technical Analysis</h4></header>
+            <div><img src="SeSimpleTechnicalAnalysis.png"  class="tickerChart" alt="SE chart with trend lines and RSI"></div>
+            <p>Sea Limited stock has broken support levels and has been met with low interest as seen in the drastic drop in RSI since
+              it's all-time highs.</p>
+            <hr>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Advanced Technical Analysis -->
+            <header><h4>Advanced Technical Analysis</h4></header>
+            <div><img src="SETA.png" class="tickerChart" alt="SE chart with fibonacci extension and a peak wave 5 at the 161.8% extension"></div>
+            <p>A clear 5 wave structure has completed on the 2 7ear daily chart, calling for an a-b-c movement before a new trend is established. This occurred after hitting the
+              161.8% extension, and may have just completed an "a" wave at the 78.6% extension, where a corrective jump may follow to give way to
+              lower-lows.</p>
+            <hr>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Thesis and Rating on 1 to 10-->
+            <header><h4>Thesis</h4></header>
+            <p>Sea Limited is given a rank of 6 or "hold" for various reasons. The company surely has fundamentals available to set it up as a
+              thriving company in the coming years (seen through its expansions and worthy investments), but as of now the technicals simply are not favorable. A standard 5 wave completion can be seen
+              on the 1 year daily chart, thus insinuating an a-b-c down before a new trend can be established. There is no point in catching a falling knife, a bottom and 
+              new trend must be established, as charts on different time frames are not as clear to indicate a continuation of the bullish trend.</p>
+        </div>
+    </div>
+</body>
+<footer class="spacing">
+  <section>
+    <div class="container-fluid uFooter text-white">
+      <div class="row">
+        <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 text-center">
+          <h2>King's Investing</h2>
+          <p>From rags to riches.</p>
+        </div>
+        <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 text-end">
+          <header class="footerLinkList"><h3>Popular Links</h3></header>
+          <ul>
+            <li><a href="memberHome.html">Home</a></li>
+            <li><a href="memberHome.html#active">Active Calls</a></li>
+            <li><a href="memberResearch.html#Analysts">Analysts</a></li>
+            <li><a href="memberResearch.html">Research</a></li>
+            <li><a href="memberFAQs.html">FAQs</a></li>
+            <li><a href="memberContact.html">Contact Us</a></li>
+            <li><a href="memberCopyright.html">Credits/Copyright</a></li>
+          </ul>
+        </div>
+        <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 text-center">
+          <header><h3>Social Media</h3></header>
+          <ul class="footerSocialMediaList">
+            <li><button class="btn btn-primary"><a href="https://www.instagram.com/kylepontius05/" class="text-white" target="_blank">Instagram  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+            </svg></a></button></li>
+            <li><button class="btn btn-primary"><a href="https://www.facebook.com/Kings-Investing-111840321337637" class="text-white" target="_blank">Facebook  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+            </svg></a></button></li>
+            <li><button class="btn btn-primary"><a href="https://www.linkedin.com/in/kyle-pontius-1aa439227/" class="text-white" target="_blank">LinkedIn  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+            </svg></a></button></li>
+            </ul>
+        </div>
+      </div>
+      <div id="copyright" class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 text-center">
+        © 2021 King's Investing
+      </div>
+    </div>
+  </section>
+  </footer>
+</html>

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<head>
+    <title>Ticker Name</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="FBLA.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="searchBar.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+<body class="spacing">
+
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="memberHome.html" id="logo">King's Investing</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navigation Section-->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <input id="dataMain" list="data" onChange="getPage()" placeholder="Enter Ticker or Name">
+<datalist id="data">
+    <option value="MARA">Marathon Digital Holdings</option> 
+    <option value="DAC">Danaos Corporation</option>
+    <option value="SMH">VanEck Vectors Semiconductor ETF</option>
+    <option value="SE">Sea Limited</option>
+    <option value="ZIM">ZIM Shipping Services</option>
+    <option value="QQQ">QQQ Invesco ETF</option>
+</datalist>
+          </li>
+          <li class="nav-item">
+            <a href="memberHome.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="memberHome.html#active">Active Calls</a>
+          </li>
+          <li class="nav-item">
+            <form action="index.html">
+              <button class="btn" id="logOut">Log Out</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container">
+        <header><h2>DAC | Danaos Corporation</h2></header>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Ticker Chart -->
+            <div id="chart" style="width: 100%; height: 70vh">
+              <canvas id="DacChart"></canvas>
+            </div>
+            
+            <script>
+              const ctx = document.getElementById('DacChart').getContext('2d');
+const SmhChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [
+        0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82,
+83,
+84,
+85,
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97,
+98,
+99,
+100,
+101,
+102,
+103,
+104,
+105,
+106,
+107,
+108,
+109,
+110,
+111,
+112,
+113,
+114,
+115,
+116,
+117,
+118,
+119,
+120,
+121,
+122,
+123,
+124,
+125,
+126,
+127,
+128,
+129,
+130,
+131,
+132,
+133,
+134,
+135,
+136,
+137,
+138,
+139,
+140,
+141,
+142,
+143,
+144,
+145,
+146,
+147,
+148,
+149,
+150,
+151,
+152,
+153,
+154,
+155,
+156,
+157,
+158,
+159,
+160,
+161,
+162,
+163,
+164,
+165,
+166,
+167,
+168,
+169,
+170,
+171,
+172,
+173,
+174,
+175,
+176,
+177,
+178,
+179,
+180,
+181,
+182,
+183,
+184,
+185,
+186,
+187,
+188,
+189,
+190,
+191,
+192,
+193,
+194,
+195,
+196,
+197,
+198,
+199,
+200,
+201,
+202,
+203,
+204,
+205,
+206,
+207,
+208,
+209,
+210,
+211,
+212,
+213,
+214,
+215,
+216,
+217,
+218,
+219,
+220,
+221,
+222,
+223,
+224,
+225,
+226,
+227,
+228,
+229,
+230,
+231,
+232,
+233,
+234,
+235,
+236,
+237,
+238,
+239,
+240,
+241,
+242,
+243,
+244,
+245,
+246,
+247,
+248,
+249,
+250,
+
+        ],
+        datasets: [{
+            label: 'DAC 1 Year Daily Chart',
+            data: [
+            12.89,
+12.52,
+12.99,
+13.09,
+14,
+14.29,
+14.4,
+14.67,
+16.09,
+17.61,
+17.23,
+18.69,
+18.68,
+19.16,
+20.31,
+20.73,
+20.09,
+21.35,
+21.01,
+21.03,
+20.33,
+20.58,
+21.43,
+21.76,
+23.65,
+24.34,
+27.36,
+27.48,
+30.28,
+32.98,
+29.98,
+29.09,
+28.82,
+29.43,
+29.51,
+28.36,
+30.08,
+28.03,
+26.73,
+24.97,
+24.87,
+26.44,
+28.09,
+27.36,
+28.48,
+32.36,
+32.82,
+32.93,
+34.72,
+35.84,
+34.29,
+37.07,
+39.43,
+39.53,
+37.22,
+39.11,
+39.3,
+36.59,
+39.88,
+39.4,
+41.54,
+40.44,
+40.8,
+42.35,
+39.5,
+39.47,
+38.14,
+41.64,
+45.4,
+48.84,
+47.73,
+49.2,
+48.81,
+49.89,
+49.18,
+53.35,
+53.12,
+47.47,
+48.76,
+51.48,
+54.79,
+51.7,
+50.88,
+49.61,
+50.97,
+52.69,
+52.75,
+53.59,
+56.63,
+56.2,
+54.12,
+51.72,
+53.19,
+51.92,
+53.11,
+53.05,
+48.47,
+51.2,
+50.2,
+51.47,
+52.86,
+53.39,
+54.75,
+53.97,
+54.29,
+61.62,
+62.56,
+65.41,
+63.31,
+65.56,
+63.75,
+56.52,
+55.65,
+55.47,
+58.17,
+59.99,
+59.79,
+61.16,
+61.94,
+62.49,
+65.26,
+61.58,
+60.63,
+63.13,
+63.73,
+65.71,
+64.98,
+62.5,
+62.38,
+67.26,
+67.28,
+67.65,
+71.22,
+73.93,
+71.63,
+70.73,
+74.11,
+71.81,
+72.13,
+72.78,
+74.98,
+73.5,
+75.8,
+78.75,
+76.65,
+74.37,
+76.79,
+74.8,
+75.25,
+74.87,
+73.4,
+68.17,
+72.05,
+73.16,
+69.41,
+66.99,
+65.85,
+62.14,
+63.2,
+64.99,
+70.3,
+69.83,
+66.98,
+67.61,
+64.2,
+67.16,
+68.69,
+67.39,
+69.49,
+69.23,
+68.79,
+71.48,
+71.25,
+68.77,
+72.28,
+72.89,
+72.53,
+71.07,
+73.88,
+73.7,
+76.76,
+74.53,
+76.41,
+82.25,
+85.57,
+83.93,
+83.26,
+84.89,
+84.81,
+83.52,
+87.04,
+85.53,
+86.59,
+87.73,
+86.14,
+85.49,
+84.98,
+83.63,
+81.1,
+83.99,
+83.14,
+81.3,
+76.5,
+76.17,
+77.87,
+79.88,
+78.67,
+81.71,
+81.86,
+81.45,
+81.9,
+81.88,
+70.89,
+73.46,
+74.73,
+74.09,
+72.23,
+70.92,
+73.25,
+71.76,
+69.87,
+70.05,
+73.6,
+75.96,
+77.63,
+75.17,
+73.42,
+75.99,
+73.77,
+71.17,
+73.97,
+74.6,
+75.98,
+74.03,
+76.32,
+72.95,
+70.84,
+72.64,
+75.66,
+73.46,
+72.98,
+73.94,
+72.33,
+71.81,
+72.21,
+72.03,
+72.62,
+72.05,
+71.47,
+72.1,
+71.79
+            ],
+            backgroundColor: [
+            'rgba(251, 175, 0, 1)',
+            ],
+            borderColor: [
+            'rgba(251, 175, 0, 1)',
+            ],
+            borderWidth: 1,
+            pointRadius: 0,
+            fill: true,
+        }]
+    },
+    options: {
+      responsiveness: true,
+      maintainAspectRatio: false,
+        scales: {
+            y: {
+                title: { text: 'Value in USD',
+                display: true,
+            }
+            },
+            x:{
+              title:{
+                text: 'Number of Trading Days in Last Year',
+                display:true
+              }
+            }
+
+        },
+        plugins:{
+            legend: {
+            labels:{
+                boxWidth: 0
+            }
+        },
+        }
+
+    }
+});
+            </script>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 spacing">
+            <div class="row">
+                <div class="col col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="text-center"><header><h4>Ratings:</h4></header></div>
+                    <ul class="text-center securityUL">
+                        <li class="securityLiSpacing">Dividend Rating: 7/10</li>
+                        <li class="securityLiSpacing">Growth Rating: 6/10</li>
+                        <li class="securityLiSpacing">Technical Rating: 2/10</li>
+                        <li class="securityLiSpacing">Stability Rating: 2/10</li>
+                        <li class="securityLiSpacing">Quantitative Rating: 4/10</li>
+                        <li class="securityLiSpacing">Risk Rating: 10/10</li>
+                        <li class="securityLiSpacing">Analyst Rating: 4/10</li>
+                    </ul>
+                </div>
+                <div class="col col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 text-center">
+                   <header>
+                    <h4>Price at Time of Writing (USD): </h4>
+                   </header> 
+                   <div class="spacing"><h5>$72.10</h5></div>
+                </div>
+                <div class="col col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 text-center">
+                  <header>
+                    <h4>Trend</h4>
+                   </header> 
+                   <div class="spacing"><h5>Neutral</h5></div>
+                </div>
+                <hr>
+            </div>   
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Overview of security -->
+            <header>
+                <h4>
+                  Overview
+                </h4>
+            </header>
+            <p>
+                Danaos Corporation is the tenth biggest container ship owner who operates and leases ships in their fleet. They have a total of 
+            65 containerships, capable of collectively carrying 403,793 TEU. The company is based in Piraeus, Greece, and has been a company since 
+            1972. 
+            </p>
+            <hr>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Fundamental Analysis -->
+            <header>
+                <h4>
+                    Fundamental Analysis
+                </h4>
+            </header>
+            <p>
+                DAC is an absolute cash cow, especially with the horrid macroecnomics in the supply chain. Once Covid-19 had begun infecting much of the world, 
+                key components of maintaining the supply chain were immensely slowed or halted. This in turn caused companies to pay higher fees to shipping 
+                companies in order to preserve a slot to ship their product to their desired port. Although this did not directly effect DAC, it caused shipping companies to 
+                charter most of their fleet, with 90% of them being ordered through the end of 2022. Furthermore, DAC has consistently beat its EPS and revenue 
+                expecations in the last year by miles. However, there is one critical issue with Danaos, the age of its ship are starting to grow out of the average 
+                lifetime for container ships, which may cause fuel efficiency and condition problems. However, salvaging prices are at incredibly high prices, which 
+                could be a good investment for the company if they do choose to scrap much of their outdated fleet. A possible upbringing in the company can be seen in its 
+                large stake in <a href="Zim.html">ZIM</a>, who have proven to be an absolute cash cow since their IPO due to the supply chain crisis and dividend, which DAC benefits from.
+            </p>
+            <hr>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Simple Technical Analysis -->
+            <header>
+                <h4>
+                    Simple Technical Analysis
+                </h4>
+            </header>
+            <div>
+              <img class="tickerChart" src="DACSTA.png" alt="DAC chart with trend lines and RSI">
+            </div>
+            <p>
+                DAC has broken its support line on the one year daily chart, and two year daily chart, while holding a steady RSI and consolidation between 
+                $70 and $73 marks. Volume has also been dwindling since the rally in September.
+            </p>
+            <hr>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Advanced Technical Analysis -->
+            <header>
+                <h4>
+                    Advanced Technical Analysis
+                </h4>
+            </header>
+
+            <div>
+              <img class="tickerChart" src="DACTA.png" alt="DAC chart with fibonacci extensions">
+            </div>
+            <p>
+                In September, DAC bounced off of the 423% extension, signaling the end of a five wave rally with a possible a wave down, needing a b-c, applying on all time frames greater than one year
+                for weekly charts. Furthermore, another five wave structure can be seen at the beginning of 4/21/21, peaking at the 200% extension, supporting the 
+                call for an a-b-c down on the yearly charts.
+            </p>
+            <hr>
+        </div>
+
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Thesis and Rating on 1 to 10-->
+            <header>
+                <h4>
+                    Thesis
+                </h4>
+            </header>
+            <p>
+                As of now, Danaos Corporation is given a rating of sell, or 4/10. DAC may be a fundamentally decent company in its current state, but months or a year from now 
+                this company and its stock could truly falter. It has an aging fleet and is not adding/replacing/salvaging much of their fleet at a rate to outpace their 
+                invevitable aging. Furthermore, after the fifth wave completion in September, volume has been dead while the stock has dropped $15+. 
+            </p>   
+        </div>
+    </div>
+</body>
+<footer class="spacing">
+    <section>
+      <div class="container-fluid uFooter text-white">
+        <div class="row">
+          <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 text-center">
+            <h2>King's Investing</h2>
+            <p>From rags to riches.</p>
+          </div>
+          <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 text-end">
+            <header class="footerLinkList"><h3>Popular Links</h3></header>
+            <ul>
+              <li><a href="memberHome.html">Home</a></li>
+              <li><a href="memberHome.html#active">Active Calls</a></li>
+              <li><a href="memberResearch.html#Analysts">Analysts</a></li>
+              <li><a href="memberResearch.html">Research</a></li>
+              <li><a href="memberFAQs.html">FAQs</a></li>
+              <li><a href="memberContact.html">Contact Us</a></li>
+              <li><a href="memberCopyright.html">Credits/Copyright</a></li>
+            </ul>
+          </div>
+          <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 text-center">
+            <header><h3>Social Media</h3></header>
+            <ul class="footerSocialMediaList">
+              <li><button class="btn btn-primary"><a href="https://www.instagram.com/kylepontius05/" class="text-white" target="_blank">Instagram  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+              </svg></a></button></li>
+              <li><button class="btn btn-primary"><a href="https://www.facebook.com/Kings-Investing-111840321337637" class="text-white" target="_blank">Facebook  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+              </svg></a></button></li>
+              <li><button class="btn btn-primary"><a href="https://www.linkedin.com/in/kyle-pontius-1aa439227/" class="text-white" target="_blank">LinkedIn  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+              </svg></a></button></li>
+              </ul>
+          </div>
+        </div>
+        <div id="copyright" class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 text-center">
+          © 2021 King's Investing
+        </div>
+      </div>
+    </section>
+    </footer>
+</html>

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="FBLA.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almendra&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almendra&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+    <body class=" spacing">
+        <!-- Navigation Bar(s)-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="nav">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" id="logo">King's Investing</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navigation Section-->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#overview">Overview</a>
+                </li>      
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <form action="Login.html">
+                    <button class="btn" id="logIn">Log In</button>
+                  </form>
+                  
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+          <!-- Brief overview -->
+          <section>
+            <div class="container">
+              <div class="text-center"><header><h2>Our Research</h2></header></div>
+              <div class="row">
+                <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-12" id="rIntro">
+                  <p>Here at King's Investing, we are fully aware that this service will be used by traders/investors at various levels in 
+                    terms of skill, knowledge, and areas of expertise, which is why we have specifically formatted every piece of analysis to ensure adequate information 
+                    on every security. However, there are areas in which we exceed, and ones in which we fall short in. At King's Investing, we 
+                    specifically excel in industrials, information technology, energy, materials, and financials. However, we do not perform 
+                    exceptionally in consumer discretionary, consumer staples, health care, real estate, utilities, and communication services. 
+                    However, in each sector of the market we ensure to beat the average growth of the S&P 500 every year.</p>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-12 container" id="methods">
+                  <div class="row">
+                    <h5>A list of our means of technical analysis and fundamental analysis are provided below:</h5>
+                    <div class="col">
+                      <h7 class="basicLi">Technical Analysis:</h7>
+                      <ul>
+                        <li class="basicLi">Exponential Moving Average</li>
+                        <li class="basicLi">MACD</li>
+                        <li class="basicLi">Volume</li>
+                        <li class="basicLi">Fibonacci Retracements</li>
+                        <li class="basicLi">Fibonacci Extensions</li>
+                        <li class="basicLi">Elliot Wave Theory</li>
+                      </ul>
+                    </div>
+                    <div class="col">       
+                    <h7 class="basicLi">Fundamental Analysis:</h7>
+                    <ul>
+                      <li class="basicLi">Cash Flow</li>
+                      <li class="basicLi">Potential</li>
+                      <li class="basicLi">Innovation</li>
+                      <li class="basicLi">Macroeconomics</li>
+                      <li class="basicLi">Management</li>
+                    </ul>
+                  </div>
+                    </div>
+                  </div>
+                  <hr>
+                  </div>
+                  <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+                    <p>
+                      With the King's Investing service, members are provided with ratings on each security in terms of their dividend, 
+                      risk, profitability, along with our analyst and quantitative algorithm ratings. 
+                      <header><h6>Rating Criterias:</h6></header>
+                      <li>
+                        Dividend - Dividend payment compared to peers in industry, along with payment consistency
+                      </li>
+                      <li>
+                        Risk - Average of analyst and quantitative odds of loss when entering position, relative to a short or buy rating
+                      </li>
+                      <li>
+                        Profitability - Average of analyst and quantitative odds of gains when entering position, relative to a short or buy rating
+                      </li>
+                      <li>
+                        Analyst - Likeness or distaste of a security by a professional King's Investing analyst
+                      </li>
+                      <li>
+                        Quantitative - Likeness or distate of a security based upon volume, historical data, moving averages, and MACD
+                      </li>
+                    </p>
+                  </div>
+                  <hr>
+                </div>
+
+          </section>
+          <section>
+            <div class="container">
+              <div class="row">
+                <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-12">
+                  <div><header class="text-center"><h4>Holding Percentage by Sector</h4></header></div>
+                  <canvas id="equityChart"></canvas>
+<script>
+const ctx = document.getElementById('equityChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Consumer Discretionary', 'Consumer Staples', 'Energy', 'Financials', 'Health Care', 'Industrials',
+      'Information Technology', 'Materials', 'Real Estate', 'Communication Services', 'Utilities'],
+        datasets: [{
+            label: '# of Votes',
+            data: [1, 1, 15, 14, 1, 21, 28, 13, 3, 3],
+            backgroundColor: [
+                'rgba(0, 110, 194, 1)',
+                'rgba(200, 40, 203, 1)',
+                'rgba(180, 86, 4, 1)',
+                'rgba(98, 0, 181, 1)',
+                'rgba(216, 17, 3, 1)',
+                'rgba(0, 122, 53, 1)',
+                'rgba(126, 62, 17, 1)',
+                'rgba(120, 38, 253, 1)',
+                'rgba(111, 113, 113, 1)',
+                'rgba(0, 122, 122, 1)',
+                'rgba(49, 0, 252, 1)',
+            ],
+            borderColor: [
+            'rgba(0, 110, 194, 1)',
+                'rgba(200, 40, 203, 1)',
+                'rgba(180, 86, 4, 1)',
+                'rgba(98, 0, 181, 1)',
+                'rgba(216, 17, 3, 1)',
+                'rgba(0, 122, 53, 1)',
+                'rgba(126, 62, 17, 1)',
+                'rgba(120, 38, 253, 1)',
+                'rgba(111, 113, 113, 1)',
+                'rgba(0, 122, 122, 1)',
+                'rgba(49, 0, 252, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+      plugins:{   
+             legend: {
+               display: false
+                     },
+                  },
+              title:{
+                text: 'Our Research From Each Sector',
+                display:true
+              }
+    }
+});
+</script>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-12 table-responsive" id="performanceTable">
+                  <table class="table table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th>Sector</th>
+                        <th>Gain Above S&P 500 (%)</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table=hover">
+                      <tr>
+                        <td>Consumer Discretionary</td>
+                        <td>24</td>
+                      </tr>
+                      <tr>
+                        <td>Consumer Staples</td>
+                        <td>13</td>
+                      </tr>
+                      <tr>
+                        <td>Energy</td>
+                        <td>65</td>
+                      </tr>
+                      <tr>
+                        <td>Financials</td>
+                        <td>34</td>
+                      </tr>
+                      <tr>
+                        <td>Health Care</td>
+                        <td>17</td>
+                      </tr>
+                      <tr>
+                        <td>Industrials</td>
+                        <td>325</td>
+                      </tr>
+                      <tr>
+                        <td>Information Technology</td>
+                        <td>643</td>
+                      </tr>
+                      <tr>
+                        <td>Materials</td>
+                        <td>33</td>
+                      </tr>
+                      <tr>
+                        <td>Real Estate</td>
+                        <td>37</td>
+                      </tr>
+                      <tr>
+                        <td>Communication Services</td>
+                        <td>11</td>
+                      </tr>
+                      <tr>
+                        <td>Utilities</td>
+                        <td>9</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <caption class="caption">
+                    <div class="text-center">To see the positions which yielded such high gains, <a href="Plan.html">subscribe here.</a></div>
+                  </caption>
+                  </div>
+                  <hr>
+                    </div>
+                  </div>
+          </section>
+          <section id="Analysts">
+            <div class="container">
+
+              <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 table-responsive">
+                <div class="text-center spacing"><h3>Our Analysts</h3></div>
+                <table class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Analyst Name</th>
+                      <th>Photo</th>
+                      <th>Sectors</th>
+                      <th>Industry</th>
+                      <th>Avg. Performance</th>
+                      <th>Prior Location</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-hover">
+                    <tr>
+                      <td>Kyle Pontius</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Information Technology, Industrials</td>
+                      <td>Application Software, Marine</td>
+                      <td>+42%</td>
+                      <td>Charles Schwabb</td>
+                    </tr>
+                    <tr>
+                      <td>Craig Pontius</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Health Care, Energy</td>
+                      <td>Health Care Technology, Integrated Oil and Gas</td>
+                      <td>+24%</td>
+                      <td>Bank of America</td>
+                    </tr>
+                    <tr>
+                      <td>Marcus Smith</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Energy, Financials</td>
+                      <td>Integrated Oil and Gas, Diversified Banks</td>
+                      <td>+47%</td>
+                      <td>Citadel</td>
+                    </tr>
+                    <tr>
+                      <td>Mark Jefferson</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Industrials, Consumer Staples</td>
+                      <td>Industrial Conglomerates, Hypermarkets and Super Centers</td>
+                      <td>+55%</td>
+                      <td>Bridgewater Associates</td>
+                    </tr>
+                    <tr>
+                      <td>Aliyah Nelson</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Energy, Information Technology</td>
+                      <td>Integrated Oil and Gas, Semiconductors</td>
+                      <td>+62%</td>
+                      <td>Farallon Capital</td>
+                    </tr>
+                    <tr>
+                      <td>Emilio Cassidy</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Industrials, Materials</td>
+                      <td>Marine, Forest Products</td>
+                      <td>+58%</td>
+                      <td>Viking Global Investors</td>
+                    </tr>
+                    <tr>
+                      <td>Javier Perez</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Communication Services, Real Estate</td>
+                      <td>Cable and Satelite, Retail REITs</td>
+                      <td>+22%</td>
+                      <td>Wells Fargo</td>
+                    </tr>
+                    <tr>
+                      <td>Amelia Hall</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Consumer Staples, Utilities</td>
+                      <td>Household Products, Electric Utilities</td>
+                      <td>+36%</td>
+                      <td>Citigroup</td>
+                    </tr>
+                    <tr>
+                      <td>Judah Thomas</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Information Technology, Energy</td>
+                      <td>Software, Energy Equipment and Services</td>
+                      <td>+32%</td>
+                      <td>Bank of America</td>
+                    </tr>
+                    <tr>
+                      <td>Vincent Martinez</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Information Technology, Industrials</td>
+                      <td>Communications Equipment, Road and Rail</td>
+                      <td>+39%</td>
+                      <td>Blackstone</td>
+                    </tr>
+                    <tr>
+                      <td>Harmony Langley</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Industrials, Financials</td>
+                      <td>Airlines, Insurance</td>
+                      <td>+27%</td>
+                      <td>RBC Capital Markets</td>
+                    </tr>
+                    <tr>
+                      <td>Jude Elsher</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Financials, Energy</td>
+                      <td>Banks, Oil, Gas & Consumable Fuels</td>
+                      <td>+31%</td>
+                      <td>Scotia Bank</td>
+                    </tr>
+                    <tr>
+                      <td>Roman Walker</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Industrials, Information Technology</td>
+                      <td>Marine, </td>
+                      <td>+37%</td>
+                      <td>TD Securities</td>
+                    </tr>
+                    <tr>
+                      <td>Melody Rivera</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Communication Services, Materials</td>
+                      <td>Media, Forest Products</td>
+                      <td>+24%</td>
+                      <td>UBS</td>
+                    </tr>
+                    <tr>
+                      <td>Evan Adams</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Health Care, Consumer Discretionary</td>
+                      <td>Biotech, Automobiles</td>
+                      <td>+13%</td>
+                      <td>Deutsche Bank</td>
+                    </tr>
+                    <tr>
+                      <td>Edward Langley</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Industrials, Energy</td>
+                      <td>Airlines, Energy Equipment & Services</td>
+                      <td>+38%</td>
+                      <td>Cowen</td>
+                    </tr>
+                    <tr>
+                      <td>Maximus Nelson</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Real Estate, Utilities</td>
+                      <td>Diversified REITs, Gas Utilities</td>
+                      <td>+11%</td>
+                      <td>BB&T</td>
+                    </tr>
+                    <tr>
+                      <td>Gracie Smith</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Financials, Communication Services</td>
+                      <td>Consumer Finance, Wireless Telecommunication Services</td>
+                      <td>+31%</td>
+                      <td>Blackstone</td>
+                    </tr>
+                    <tr>
+                      <td>Waylon Adams</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Materials, Industrials</td>
+                      <td>Chemicals, Marine</td>
+                      <td>+35%</td>
+                      <td>Goldman Sachs</td>
+                    </tr>
+                    <tr>
+                      <td>David Thomas</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Information Technology, Materials</td>
+                      <td>Communications Equipment, Construction Materials</td>
+                      <td>+26%</td>
+                      <td>Citigroup</td>
+                    </tr>
+                    <tr>
+                      <td>Chase Hilton</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Energy, Information Technology</td>
+                      <td>Oil, IT Services</td>
+                      <td>+24%</td>
+                      <td>J.P. Morgan</td>
+                    </tr>
+                    <tr>
+                      <td>Kobe Rodriguez</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Consumer Discretionary, Energy</td>
+                      <td>Leisure Products, Oil</td>
+                      <td>+21%</td>
+                      <td>NBF</td>
+                    </tr>
+                    <tr>
+                      <td>Vivian Nelson</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Information Technology, Industrials</td>
+                      <td>Software, Marine</td>
+                      <td>+24%</td>
+                      <td>Berkshire Hathaway</td>
+                    </tr>
+                    <tr>
+                      <td>Luca Cromwel</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Materials, Industrials</td>
+                      <td>Metals & Mining, Industrial Conglomerates</td>
+                      <td>+32%</td>
+                      <td>Raymond James</td>
+                    </tr>
+                    <tr>
+                      <td>Everly Clark</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Energy, Industrials</td>
+                      <td>Oil, Airlines</td>
+                      <td>+46%</td>
+                      <td>McColl Partners</td>
+                    </tr>
+                    <tr>
+                      <td>Kayla Harris</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Energy, Health Care</td>
+                      <td>Oil, Biotechnology</td>
+                      <td>+22%</td>
+                      <td>Morgan Stanley</td>
+                    </tr>
+                    <tr>
+                      <td>Brynlee Nora</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Health Care, Financials</td>
+                      <td>Biotechnology, Banks</td>
+                      <td>+17%</td>
+                      <td>Goldman Sachs</td>
+                    </tr>
+                    <tr>
+                      <td>Violet Peterson</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Information Technology, Communication Services</td>
+                      <td>Communications Equipment, Interactive Media & Services</td>
+                      <td>+33%</td>
+                      <td>Mongtomery & Co.</td>
+                    </tr>
+                    <tr>
+                      <td>Elliott King</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Energy, Industrials</td>
+                      <td>Oil, Marine</td>
+                      <td>+23%</td>
+                      <td>Needham & Co.</td>
+                    </tr>
+                    <tr>
+                      <td>Patrick Ellis</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Industrials, Materials</td>
+                      <td>Marine, Metals</td>
+                      <td>+44%</td>
+                      <td>Piper Jaffray</td>
+                    </tr>
+                    <tr>
+                      <td>Manuel Lang</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Consumer Discretionary, Consumer Staples</td>
+                      <td>Specialty Retail, Tobacco</td>
+                      <td>+20%</td>
+                      <td>Raymond James</td>
+                    </tr>
+                    <tr>
+                      <td>Gunner Carey</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Materials, Industrials</td>
+                      <td>Forest Products, Machinery</td>
+                      <td>+42%</td>
+                      <td>ICBC</td>
+                    </tr>
+                    <tr>
+                      <td>Eli Daughtler</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Communication Services, Utilities</td>
+                      <td>Wireless Telecommunication Services, Electric Utilities</td>
+                      <td>+29%</td>
+                      <td>Evercore Partners</td>
+                    </tr>
+                    <tr>
+                      <td>Audrey Jenkins</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Information Technology, Energy</td>
+                      <td>Software, Oil</td>
+                      <td>+64%</td>
+                      <td>Credit Suisse</td>
+                    </tr>
+                    <tr>
+                      <td>Jayce Harris</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Energy, Industrials</td>
+                      <td>Oil, Marine</td>
+                      <td>+39%</td>
+                      <td>TD Securities</td>
+                    </tr>
+                    <tr>
+                      <td>Mia Thomas</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Materials, Industrials</td>
+                      <td>Metals, Marine</td>
+                      <td>+31%</td>
+                      <td>Morgan Stanley</td>
+                    </tr>
+                    <tr>
+                      <td>Joseph Mitchell</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Financials, Real Estate</td>
+                      <td>Banks, Retail REITs</td>
+                      <td>+42%</td>
+                      <td>Tiger Management</td>
+                    </tr>
+                    <tr>
+                      <td>Sophia Ramirez</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Information Technology, Communication Services</td>
+                      <td>Software, Wireless Telecommunication Services</td>
+                      <td>+34%</td>
+                      <td>Kora Management</td>
+                    </tr>
+                    <tr>
+                      <td>Millie Kade</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Real Estate, Consumer Staples</td>
+                      <td>Retail REITs, Tobacco</td>
+                      <td>+21%</td>
+                      <td>Citadel</td>
+                    </tr>
+                    <tr>
+                      <td>Alina Davis</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Consumer Discretionary, Real Estate</td>
+                      <td>Automobiles, Retail REITs</td>
+                      <td>+24%</td>
+                      <td>Elliott Management</td>
+                    </tr>
+                    <tr>
+                      <td>Lucas Young</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Information Technology, Consumer Discretionary</td>
+                      <td>Software, Automobiles</td>
+                      <td>+20%</td>
+                      <td>SunTrust</td>
+                    </tr>
+                    <tr>
+                      <td>Quinn Adams</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Industrials, Consumer Staples</td>
+                      <td>Marine, Tobacco</td>
+                      <td>+21%</td>
+                      <td>Stifel Financial</td>
+                    </tr>
+                    <tr>
+                      <td>Jude Carter</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Industrials, Materials</td>
+                      <td>Marine, Metals</td>
+                      <td>+23%</td>
+                      <td>RBS</td>
+                    </tr>
+                    <tr>
+                      <td>Amaya Hope</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Materials, Communication Services</td>
+                      <td>Metals, Wireless Telecommunication Services</td>
+                      <td>+34%</td>
+                      <td>Marathon Capital</td>
+                    </tr>
+                    <tr>
+                      <td>Kehlani Monroe</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Materials, Industrials</td>
+                      <td>Metals, Marine</td>
+                      <td>+28%</td>
+                      <td>Lazard</td>
+                    </tr>
+                    <tr>
+                      <td>Jackson Torres</td>
+                      <td><img src="analystTemplate.png" alt="Picture of " class="analystPhoto"></td>
+                      <td>Information Technology, Health Care</td>
+                      <td>Software, Biotechnology</td>
+                      <td>+24%</td>
+                      <td>Jefferies & Co.</td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="container" id="list">
+
+              <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 table-responsive">
+                <div class="text-center spacing"><h3>Securities Currently in Database</h3></div>
+                  
+                    <table class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <th>Ticker</th>
+                    <th>Name</th>
+                    <th>Sector</th>
+                    <th>Industry</th>
+                    <th>Last Updated:</th>
+                  </thead>
+                  <tbody class="table-striped">
+                    <tr>
+                      <td>SE</td>
+                      <td>Sea Limited</td>
+                      <td>Communication Services</td>
+                      <td>Interactive Home Entertainment</td>
+                      <td>12/3/21</td>
+                    </tr>
+                    <tr>
+                      <td>DAC</td>
+                      <td>Danaos Corporation</td>
+                      <td>Industrials</td>
+                      <td>Marine</td>
+                      <td>12/1/21</td>
+                    </tr>
+                    <tr>
+                      <td>ZIM</td>
+                      <td>ZIM Integrated Shipping Services</td>
+                      <td>Industrials</td>
+                      <td>Marine</td>
+                      <td>11/29/21</td>
+                    </tr>
+                    <tr>
+                      <td>SMH</td>
+                      <td>VanEck Vectors Semiconductor ETF</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>11/12/21</td>
+                    </tr>
+                    <tr>
+                      <td>MARA</td>
+                      <td>Marathon Digital Holdings</td>
+                      <td>Information Technology</td>
+                      <td>Application Software</td>
+                      <td>12/2/21</td>
+                    </tr>
+                    <tr>
+                      <td>QQQ</td>
+                      <td>Invesco QQQ ETF</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>10/28/21</td>
+                    </tr>
+                  </tbody>
+                  </table>
+          </section>
+    </body>
+    <footer class="spacing">
+      <section>
+          <div class="uFooter text-white container-fluid">
+            <div class="row">
+              <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 text-center">
+                <h2>King's Investing</h2>
+                <p>From rags to riches.</p>
+              </div>
+              <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 text-end">
+                <header class="footerLinkList"><h3>Popular Links</h3></header>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="index.html#active">Active Calls</a></li>
+                  <li><a href="Research.html#Analysts">Analysts</a></li>
+                  <li><a href="Research.html">Research</a></li>
+                  <li><a href="index.html#pricing">Pricing</a></li>
+                  <li><a href="FAQs.html">FAQs</a></li>
+                  <li><a href="Contact.html">Contact Us</a></li>
+                  <li><a href="Copyright.html">Credits/Copyright</a></li>
+                </ul>
+              </div>
+              <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 text-center">
+                <header><h3>Social Media</h3></header>
+                <ul class="footerSocialMediaList">
+                  <li><button class="btn btn-primary"><a href="https://www.instagram.com/kylepontius05/" class="text-white" target="_blank">Instagram  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                  </svg></a></button></li>
+                  <li><button class="btn btn-primary"><a href="https://www.facebook.com/Kings-Investing-111840321337637" class="text-white" target="_blank">Facebook  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                  </svg></a></button></li>
+                  <li><button class="btn btn-primary"><a href="https://www.linkedin.com/in/kyle-pontius-1aa439227/" class="text-white" target="_blank">LinkedIn  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                  </svg></a></button></li>
+                  </ul>
+              </div>
+            </div>
+            <div id="copyright" class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 text-center">
+              &copy; 2021 King's Investing
+            </div>
+          </div>
+        </section>
+    </footer>
+</html>

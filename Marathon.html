@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<head>
+    <title>Ticker Name</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="FBLA.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <script src="searchBar.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  </head>
+<body class="spacing">
+
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="memberHome.html" id="logo">King's Investing</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navigation Section-->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <input id="dataMain" list="data" onChange="getPage()" placeholder="Enter Ticker or Name">
+<datalist id="data">
+    <option value="MARA">Marathon Digital Holdings</option> 
+    <option value="DAC">Danaos Corporation</option>
+    <option value="SMH">VanEck Vectors Semiconductor ETF</option>
+    <option value="SE">Sea Limited</option>
+    <option value="ZIM">ZIM Integrated Shipping Services</option>
+    <option value="QQQ">QQQ Invesco ETF</option>
+</datalist>
+          </li>
+          <li class="nav-item">
+            <a href="memberHome.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="memberHome.html#active">Active Calls</a>
+          </li>
+          <li class="nav-item">
+            <form action="index.html">
+              <button class="btn" id="logOut">Log Out</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <div class="container">
+        <header><h2>MARA | Marathon Digital Holdings</h2></header>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Ticker Chart -->
+            <div id="chart" style="width: 100%; height: 70vh">
+            <canvas id="maraChart"></canvas></div>
+            <script>
+              const ctx = document.getElementById('maraChart').getContext('2d');
+const SmhChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [
+        0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82,
+83,
+84,
+85,
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97,
+98,
+99,
+100,
+101,
+102,
+103,
+104,
+105,
+106,
+107,
+108,
+109,
+110,
+111,
+112,
+113,
+114,
+115,
+116,
+117,
+118,
+119,
+120,
+121,
+122,
+123,
+124,
+125,
+126,
+127,
+128,
+129,
+130,
+131,
+132,
+133,
+134,
+135,
+136,
+137,
+138,
+139,
+140,
+141,
+142,
+143,
+144,
+145,
+146,
+147,
+148,
+149,
+150,
+151,
+152,
+153,
+154,
+155,
+156,
+157,
+158,
+159,
+160,
+161,
+162,
+163,
+164,
+165,
+166,
+167,
+168,
+169,
+170,
+171,
+172,
+173,
+174,
+175,
+176,
+177,
+178,
+179,
+180,
+181,
+182,
+183,
+184,
+185,
+186,
+187,
+188,
+189,
+190,
+191,
+192,
+193,
+194,
+195,
+196,
+197,
+198,
+199,
+200,
+201,
+202,
+203,
+204,
+205,
+206,
+207,
+208,
+209,
+210,
+211,
+212,
+213,
+214,
+215,
+216,
+217,
+218,
+219,
+220,
+221,
+222,
+223,
+224,
+225,
+226,
+227,
+228,
+229,
+230,
+231,
+232,
+233,
+234,
+235,
+236,
+237,
+238,
+239,
+240,
+241,
+242,
+243,
+244,
+245,
+
+        ],
+        datasets: [{
+            label: 'MARA 1 Year Daily Chart',
+            data: [
+            5.51,
+5.18,
+4.78,
+5.22,
+4.75,
+5.54,
+7.07,
+8.23,
+9.47,
+9.31,
+11.5,
+13.97,
+10.81,
+10.92,
+12.25,
+11.76,
+10.88,
+10.44,
+11.01,
+13.59,
+16.96,
+22.36,
+26.39,
+23.36,
+26.15,
+23,
+24.44,
+22.39,
+22.35,
+19.27,
+17.56,
+18.3,
+18.22,
+18.6,
+17.65,
+19.9,
+20.74,
+20.74,
+22.74,
+23.67,
+22.795,
+22.52,
+32.07,
+37.59,
+34.01,
+37.27,
+38.46,
+43.56,
+47.9,
+40.98,
+43.27,
+37.11,
+28.56,
+33.41,
+30.63,
+30.15,
+38.5,
+34.89,
+36.62,
+32.01,
+30.03,
+28.51,
+36.77,
+38.19,
+41.81,
+40.7,
+43.1,
+38.36,
+43.18,
+41.56,
+43.05,
+39.99,
+38.04,
+34.04,
+34.2,
+36.09,
+38.13,
+44.14,
+48.02,
+48.85,
+56.56,
+52.45,
+46.26,
+49.82,
+49,
+50.07,
+51,
+42.97,
+42.14,
+38.93,
+35.55,
+33.57,
+34.93,
+31.06,
+32.3,
+34.14,
+34.12,
+37.64,
+34.26,
+36.78,
+36.22,
+33.95,
+33.55,
+31.4,
+31.33,
+27.82,
+25.95,
+22.85,
+19.66,
+23.08,
+22.36,
+22.99,
+21.71,
+21.89,
+20.89,
+23.15,
+22.62,
+25.26,
+25.84,
+24.77,
+25.2,
+25.24,
+23.79,
+24.35,
+24.39,
+23.64,
+26.14,
+26.51,
+26.55,
+29.94,
+30.67,
+29.97,
+30.06,
+28.92,
+27.83,
+27.34,
+27.61,
+29.48,
+28.19,
+30.11,
+31.89,
+31.37,
+30.69,
+30.29,
+29.72,
+28.59,
+27.79,
+27.69,
+27.37,
+25.96,
+24.64,
+24.48,
+23.33,
+22.35,
+22.63,
+25.06,
+25.26,
+24.64,
+29.58,
+27.02,
+28.16,
+27.48,
+27.63,
+28.23,
+27.13,
+28.72,
+31.47,
+34.25,
+35.98,
+35.7,
+35.18,
+33.84,
+32.88,
+33.04,
+30.65,
+30.78,
+31.81,
+35.26,
+36.76,
+37.98,
+38.33,
+36.22,
+40.2,
+40.54,
+40.59,
+41.18,
+42.2,
+43.41,
+39.39,
+37.29,
+38.89,
+35.74,
+35.59,
+34.68,
+37.05,
+36.34,
+35.84,
+33.89,
+33.24,
+35.7,
+37.7,
+36.18,
+35.17,
+32.75,
+30.61,
+31.58,
+33.17,
+33.63,
+37.19,
+38.96,
+38.42,
+39.49,
+42.96,
+40.86,
+43.79,
+43.59,
+48.89,
+51.45,
+53.91,
+53.07,
+50.91,
+49.46,
+54.69,
+52.86,
+50.04,
+50.39,
+52.24,
+55.51,
+63.34,
+64.66,
+64.29,
+63.82,
+75.3,
+76.09,
+64.84,
+70.69,
+75.92,
+55.4,
+55.37,
+50.95,
+51.46,
+54.68,
+49.57,
+52.12,
+52.39,
+49.2,
+51.39,
+            ],
+            backgroundColor: [
+            'rgba(251, 175, 0, 1)',
+            ],
+            borderColor: [
+            'rgba(251, 175, 0, 1)',
+            ],
+            borderWidth: 1,
+            pointRadius: 0,
+            fill: true,
+        }]
+    },
+    options: {
+      maintainAspectRatio: false,
+      responsiveness: true,
+      scales: {
+            y: {
+                title: { text: 'Value in USD',
+                display: true,
+            }
+            },
+            x:{
+              title:{
+                text: 'Number of Trading Days in Last Year',
+                display:true
+              }
+            }
+
+        },
+        plugins:{
+            legend: {
+            labels:{
+                boxWidth: 0
+            }
+        },
+        }
+
+    }
+});
+            </script>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 spacing">
+            <div class="row">
+                <div class="col col-xxl-4 col-xl-4 col-md-4 col-sm-6 col-xs-6">
+                    <div class="text-center"><header><h4>Ratings:</h4></header></div>
+                    <ul class="text-center securityUL">
+                        <li class="securityLiSpacing">Dividend Rating: N/A</li>
+                        <li class="securityLiSpacing">Growth Rating: 10/10</li>
+                        <li class="securityLiSpacing">Technical Rating: 9/10</li>
+                        <li class="securityLiSpacing">Stability Rating: 5/10</li>
+                        <li class="securityLiSpacing">Quantitative Rating: 9/10</li>
+                        <li class="securityLiSpacing">Risk Rating: 7/10</li>
+                        <li class="securityLiSpacing">Analyst Rating: 7/10</li>
+                    </ul>
+                </div>
+                <div class="col col-xxl-4 col-xl-4 col-md-4 col-sm-3 col-xs-3 text-center">
+                    <header><h4>Price at Time of Writing (USD):</h4></header>
+                     <div class="spacing">
+                     <h5> 51.39</h5>
+                     </div>
+                </div>
+                <div class="col col-xxl-4 col-xl-4 col-md-4 col-sm-3 col-xs-3 text-center">
+                  <div class="text-center"><header><h4>Trend:</h4></header></div>
+                  <div class="spacing">
+                  <h5>Bullish</h5>
+                  </div>
+                </div>
+                <hr>
+            </div>   
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Overview of security -->
+            <header>
+                <h4>
+                  Overview
+                </h4>
+            </header>
+            <p>
+              Marathon Digital Holdings is a blockchain company with a focus on mining and holding cryptocurrency, primarily Bitcoin and some Ethereum.
+              The company was formed in 2010 and is based in Las Vegas, Nevada.
+            </p>
+            <hr>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Fundamental Analysis -->
+            <header>
+                <h4>
+                    Fundamental Analysis
+                </h4>
+            </header>
+            <p>
+              Although MARA has had very recent hardships with stock offerings and the volatility of Bitcoin, we are under the belief that Marathon is still in a 
+              prime position to thrive in the coming months and years. The growing adoption of Bitcoin by established entities and growing user adoption of Bitcoin is 
+              allowing the price of Bitcoin to grow, thus putting MARA in a better financial situation, as they are a proxy version of Bitcoin. 
+            </p>
+            <hr>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Simple Technical Analysis -->
+            <header>
+                <h4>
+                    Simple Technical Analysis
+                </h4>
+            </header>
+            <div>
+              <img class="tickerChart" src="MARAREALSTA.png" alt="MARA chart with RSI and trend lines">
+            </div>
+            <p>
+              MARA has recently broken it's resistance line and reenter the support-resistance channel, the RSI is in the midst of a 
+              consolidation period, indicating a move in between the channel for a certain period until Bitcoin's path is present.
+            </p>
+            <hr>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Advanced Technical Analysis -->
+            <header>
+                <h4>
+                    Advanced Technical Analysis
+                </h4>
+            </header>
+            <div>
+              <img class="tickerChart" src="MaraSTA.png" alt="MARA chart with fibonacci extensions hitting the 161.8% extension">
+            </div>
+            <p>
+              Marathon has just completed a wave 3 of 5 on the 1 year daily chart, with a bottom of wave 4 being probable. The next most likely target 
+              is around $123, or the 261.8% extension.
+            </p>
+            <hr>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- Thesis and Rating on 1 to 10-->
+            <header>
+                <h4>
+                    Thesis
+                </h4>
+            </header>
+            <p>
+              MARA is given a rating of 7, or buy, for various fundamental and technical reasons. Fundamentally, their holding and mining of 
+              Bitcoin has proven to be incredibly lucrative despite drawbacks in the asset, Bitcoin is believed to rise in the coming years, 
+              putting MARA in a better position. Furthermore, the indication of a bottom in wave 4 gives a possible entry for the stock to more than double in 
+              value in the coming months. However, MARA is not given a higher rating due to the risk revolving around the asset.
+            </p>
+        </div>
+    </div>
+</body>
+<footer class="spacing">
+  <section>
+    <div class="container-fluid uFooter text-white">
+      <div class="row">
+        <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 text-center">
+          <h2>King's Investing</h2>
+          <p>From rags to riches.</p>
+        </div>
+        <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 text-end">
+          <header class="footerLinkList"><h3>Popular Links</h3></header>
+          <ul>
+            <li><a href="memberHome.html">Home</a></li>
+            <li><a href="memberHome.html#active">Active Calls</a></li>
+            <li><a href="memberResearch.html#Analysts">Analysts</a></li>
+            <li><a href="memberResearch.html">Research</a></li>
+            <li><a href="memberFAQs.html">FAQs</a></li>
+            <li><a href="memberContact.html">Contact Us</a></li>
+            <li><a href="memberCopyright.html">Credits/Copyright</a></li>
+          </ul>
+        </div>
+        <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 text-center">
+          <header><h3>Social Media</h3></header>
+          <ul class="footerSocialMediaList">
+            <li><button class="btn btn-primary"><a href="https://www.instagram.com/kylepontius05/" class="text-white" target="_blank">Instagram  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+            </svg></a></button></li>
+            <li><button class="btn btn-primary"><a href="https://www.facebook.com/Kings-Investing-111840321337637" class="text-white" target="_blank">Facebook  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+            </svg></a></button></li>
+            <li><button class="btn btn-primary"><a href="https://www.linkedin.com/in/kyle-pontius-1aa439227/" class="text-white" target="_blank">LinkedIn  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+            </svg></a></button></li>
+            </ul>
+        </div>
+      </div>
+      <div id="copyright" class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 text-center">
+        © 2021 King's Investing
+      </div>
+    </div>
+  </section>
+  </footer>
+</html>

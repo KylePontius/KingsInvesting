@@ -1,0 +1,302 @@
+#logo{
+    color: rgb(240, 237, 94);
+    font-family: 'Almendra', serif;
+}
+
+p{
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+}
+
+h1{
+    font-family: 'Roboto', sans-serif;
+}
+h2{
+    font-family: 'Roboto', sans-serif;
+}
+h3{
+    font-family: 'Roboto', sans-serif;
+}
+h4{
+    font-family: 'Roboto', sans-serif;
+}
+h5{
+    font-family: 'Roboto', sans-serif;
+}
+h6{
+    font-family: 'Roboto', sans-serif;
+}
+#rIntro{
+    font-size: 15px;
+}
+
+.basicLi{
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+}
+
+#nav{
+    top: 0;
+    background-color: #121420;
+}
+#intro p{
+    font-size: 75px;
+}
+
+.largeSpacing{
+    margin-top: 120px;
+}
+#navbarDropdownMenuLink{
+    margin-right: 0;
+    margin-top: 0;
+}
+
+table{
+    text-align:center;
+}
+
+table {border-collapse:collapse}
+
+#subscribe{
+    text-align: center;
+}
+
+*{
+    scroll-behavior: smooth;
+    border-collapse: collapse;
+}
+
+#promise{
+    margin-top: 100px;
+}
+
+.card-title{
+    text-align: center;
+}
+
+#performanceChart{
+    max-width: 100%;
+    max-height: 400px;
+}
+
+table{
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+#intro{
+
+    margin-top:100px;
+}
+
+#pitch{
+    font-size: 75px;
+}
+
+.blurred{
+    filter:blur(4px);
+    -webkit-filter: blur(4px);
+}
+
+
+#signUp{
+    color: white;
+}
+
+body{
+    background:#E9ECEB;
+}
+
+
+
+.uFooter{
+    background-color: #121420;
+}
+footer{
+    box-sizing: border-box;
+    width: 100%;
+}
+.spacing{
+    padding-top: 60px;
+}
+
+table td{
+    width: 25%;
+    word-wrap: break-word;
+}
+
+.uFooter ul{
+    list-style: none;
+}
+
+.uFooter button{
+    width: 40%;
+    padding: 10px;
+}
+
+.uFooter li{
+    padding: 5px;
+}
+
+#signUp{
+    background:linear-gradient(to right, #BF953F, #FCF6BA);
+    color:black;
+}
+
+#logIn{
+    background:linear-gradient(to right, #BF953F, #FCF6BA);
+    color:black;
+}
+select {
+    text-align-last: center;
+    text-align: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
+ }
+
+ #membershipSelectForm{
+     min-width:100%;
+ }
+
+ .marginSpacing{
+     margin-top: 65px;
+ }
+
+.analystPhoto{
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        max-width: 40%;
+}
+#loginForm{
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 200px;
+    padding-bottom: 10px;
+}
+.loginSpacing{
+    margin-top: 40px;
+}
+
+#loginSubmit{
+    width: 50%;
+}
+
+.tickerChart{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+}
+
+#logOut{
+    background:linear-gradient(to right, #BF953F, #FCF6BA);
+    color:black;
+}
+
+hr{
+    color:#FBAF00;
+}
+
+#myUL{
+    display:none;
+}
+
+.securityUL{
+    list-style: none;
+}
+
+.securityLiSpacing{
+    padding:3px;
+}
+
+ul{
+    list-style: none;
+}
+
+footer{
+    position: static;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+#dataMain{
+    margin-top: 2%;
+    height: 80%;
+    width: 100%;
+}
+
+.fillerCardLeft{
+    border-left: 1px solid #E9ECEB;
+    border-bottom: 1px solid #E9ECEB;
+    border-top: 1px solid #E9ECEB;
+    background-color: #E9ECEB;
+}
+
+.fillerCardRight{
+    border-right: 1px solid #E9ECEB;
+    border-bottom: 1px solid #E9ECEB;
+    border-top: 1px solid #E9ECEB;
+    background-color: #E9ECEB;
+}
+
+
+.miniSpacing{
+    padding-top: 30px;
+}
+
+.ContactList li{
+    padding: 8px;
+}
+
+.ContactList li button {
+    width: 100%;
+}
+
+#Username{
+    width: 80%;
+    height: 55px;
+}
+
+#Password{
+    width: 80%;
+    height: 55px;
+}
+
+#loginForm{
+    background-color: #121420;
+}
+
+#loginSubmit{
+    background:linear-gradient(to right, #BF953F, #FCF6BA);
+    color:black;
+}
+
+#register{
+    background:linear-gradient(to right, #BF953F, #FCF6BA);
+    color:black;
+    width: 80%;
+    border: 2px solid #E9ECEB;
+}
+
+#memberPreviewList li{
+    padding: 10px;
+}
+
+#chart{
+    width: 100%;
+}
+
+.footerSocialMediaList a{
+    text-decoration-line: none;
+}
+img {
+    width: 100%;
+    height: auto;
+  }
+
+#pricing div{
+    font-size: 15px;
+}
